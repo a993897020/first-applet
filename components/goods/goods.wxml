@@ -1,0 +1,50 @@
+     <view class="goods-wrapper">
+     <!-- 左边菜单栏 -->
+        <scroll-view class="menu-wrapper" scroll-y="{{true}}">
+          <view class="menuItem {{i==0?'menuActive':''}}" data-i="{{0}}" bindtap="onClickMenu">
+          <image src="{{showItem.tag_icon}}"></image>
+          <text>{{showItem.tag_name}}</text>
+          </view>
+          <view wx:for="{{foods}}" wx:key="index" class="menuItem {{i==index+1?'menuActive':''}} " wx:for-item="food" data-i="{{index+1}}" bindtap="onClickMenu" >
+          <image wx:if="{{food.icon}}" src="{{food.icon}}"></image>
+            <text>{{food.name}}</text>
+          </view>
+        </scroll-view>
+         <!-- 右边商品列表 -->
+         <scroll-view class="food-wrapper" scroll-y="{{true}}" scroll-into-view="{{ai}}" scroll-with-animation bindscroll="scrollEvent"  >
+          <view class="foodItem" wx:for="{{showItem.operation_source_list}}" wx:key="index" id="{{'a'+0}}">
+        <image src="{{item.pic_url}}"></image>
+          </view>
+          <view class="foodItem" wx:for="{{foods}}" wx:key="index" wx:for-item="classify" id="{{'a'+(index+1)}}" >
+            <view class="title-wrapper">
+            <image src="image/tag.png"></image>
+            <text> {{classify.name}}</text>
+            </view>
+            <view class="info-wrapper" wx:for="{{classify.spus}}" wx:key="index" wx:for-item="info" bindtap="onOpenEvent" data-food="{{info}}">
+              <image src="{{info.picture}}"></image>
+              <view class="info">
+                <view class="info-name">
+                  {{info.name}}
+                </view>
+                <view class="info-total">
+                  {{info.month_saled_content}}<text>{{info.praise_content}}</text>
+                </view>
+                <view class="info-money">
+                  {{info.min_price}}/{{info.unit}}
+                </view>
+                <!-- count加减 -->
+                <controlCount  bindcountInfo="onCountInfo" count="{{count}}" info="{{info}}" class="count" foods="{{foods}}"></controlCount>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+    </view>
+     <view wx:for='{{foods}}' wx:key="index" wx:for-item="food">
+      <view wx:for="{{food.spus}}" wx:key="index" >
+                           <!-- 购物车  -->
+       <shopping poi_info="{{poi_info}}" foodCountInfo="{{foodCountInfo}}" foods="{{foods}}"></shopping>
+      </view>
+     </view>
+   
+        
+        

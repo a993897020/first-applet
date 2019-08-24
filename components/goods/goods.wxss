@@ -1,0 +1,92 @@
+ .goods-wrapper{
+  display:flex;
+}
+.goods-wrapper .menu-wrapper{
+  width: 180rpx;
+  height: 680rpx;
+}
+.menu-wrapper .menuItem{
+  width: 180rpx;
+  height: 80rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  text-align: center;
+   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 80rpx;
+}
+.menuItem image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.menuItem text{
+  font-size: 24rpx;
+}
+.goods-wrapper .food-wrapper{
+    flex: 1;
+  padding: 10rpx 20rpx;
+  width: 100%;
+  height: 700rpx;
+
+}
+.food-wrapper .foodItem{
+ width: 100%;
+}
+.foodItem image{
+  width: 100%;
+  height: 250rpx;
+  border-radius: 10rpx;
+}
+.foodItem .title-wrapper{
+  margin-bottom: 10rpx;
+}
+.title-wrapper image{
+  width: 10rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+.title-wrapper text{
+  font-size: 24rpx;
+}
+.foodItem .info-wrapper{
+  display:flex;
+   position:relative;
+  left: 0;
+  top: 0;
+}
+.info-wrapper .count{
+    position:absolute;
+  right: 10rpx;
+  bottom: 77rpx;
+}
+.info-wrapper image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.info-wrapper .info{
+  flex:1;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+}
+.info .info-name{
+  margin-bottom: 10rpx;
+  color: #000;
+}
+.info .info-total{
+  color: #89847e;
+  margin-bottom: 10rpx;
+}
+.info-total text{
+  margin-left: 20rpx;
+}
+.info .info-money{
+  color: red;
+  
+}
+.menuActive{
+  background-color: rgba(0, 0, 0, .1);
+  font-weight: bold;
+  animation: 1s;
+}

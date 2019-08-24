@@ -1,0 +1,28 @@
+<!--index.wxml-->
+  <header poi_info="{{poi_info}}"></header>
+  <view class="nav-wrapper">
+      <view 
+  class="item {{indexTap===index?'active':''}}" wx:for="{{nav}}" wx:key="{{index}}" data-index="{{index}}"
+      bindtap="onTap">
+        {{item}}
+        <view class="{{indexTap===index?';line':''}}" ></view>
+      </view>
+    </view>
+
+  <swiper bindchange="changeTap"
+      indicator-dots="{{false}}"
+      class="content-wrapper"
+      current="{{indexTap}}">
+    <swiper-item class="item-wrapper">
+     <goods showItem="{{showItem}}" foods="{{foods}}" poi_info="{{poi_info}}" bindgetItem="getFoodItem"></goods>
+       
+    </swiper-item>
+    <swiper-item class="item-wrapper">
+      <rating ratings="{{ratings}}"></rating>
+    </swiper-item>
+    <swiper-item class="item-wrapper">
+    <seller seller="{{seller}}"></seller>
+    </swiper-item>
+  </swiper>
+   
+  

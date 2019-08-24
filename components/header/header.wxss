@@ -1,0 +1,132 @@
+/**index.wxss**/
+.item-wrapper{
+  width: 100%;
+}
+.item-wrapper .header-wrapper{
+  width:100%;
+  height: 320rpx;
+  position:relative;
+  left: 0;
+  top: 0;
+}
+
+.header-wrapper .bg-wrapper{
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.bg-wrapper image{
+  width: 100%;
+  height: 320rpx;
+}
+.header-wrapper.top-wrapper{
+  width: 100%;
+  height:50rpx; 
+ 
+} 
+.top-wrapper .back{
+  position:absolute;
+  top: 25rpx;
+  left: 20rpx;
+}
+.back image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.top-wrapper .search{
+  width: 450rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 100rpx;
+}
+.search input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 0 20rpx;
+  background-color: #fff;
+  border-radius:20rpx;
+  font-size: 24rpx;
+}
+.top-wrapper .more-wrapper{
+  position:absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.more-wrapper .icon-p{
+  border: 1px solid #fff;
+  padding: 5rpx;
+  font-size: 24rpx;
+  color: #fff;
+  margin-right: 15rpx;
+}
+.more-wrapper .icon{
+  width: 10rpx;
+  height: 10rpx;
+  display:inline-block;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius:50%;
+}
+.header-wrapper .content-wrapper{
+  width: 100%;
+}
+.content-wrapper .img-m{
+  width: 100rpx;
+  height: 100rpx;
+  position:absolute;
+  left: 20rpx;
+  top: 120rpx;
+  border-radius:10rpx;
+}
+.content-wrapper .name{
+  position:absolute;
+  left: 140rpx;
+  top: 140rpx;
+  font-weight:500;
+  color: #fff;
+  font-size: 32rpx;
+}
+.content-wrapper .star-wrapper{
+  position:absolute;
+  right: 20rpx;
+  top: 130rpx;
+}
+.star-wrapper image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.star-wrapper .text{
+  color: #fff;
+  font-size: 26rpx;
+  margin-left: -10rpx;
+}
+.header-wrapper .footer-wrapper{
+  width: 100%;
+  position:absolute;
+  top: 325rpx;
+}
+.footer-wrapper .img-f{
+  position:absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.footer-wrapper .info{
+  position:absolute;
+  bottom: 20rpx;
+  left: 40rpx;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.footer-wrapper .active{
+  position:absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+}

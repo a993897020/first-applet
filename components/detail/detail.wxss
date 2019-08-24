@@ -1,0 +1,59 @@
+.food-wrapper{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #fff;
+  height: 100%;
+}
+.food-wrapper .image-wrapper{
+ width: 100%;
+}
+.image-wrapper image{
+  width: 100%;
+}
+.food-wrapper .info-wrapper{
+  padding: 20rpx;
+}
+.info-wrapper .info-name{
+  font-size: 32rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+.info-wrapper .info-total{
+  font-size: 24rpx;
+  color: rgb(160, 142, 142);
+  margin-bottom: 10rpx;
+}
+.info-wrapper .money-count{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10rpx;
+}
+.money-count .money{
+  color: red;
+  font-size: 24rpx;
+}
+.food-wrapper .rating-wrapper{
+  padding: 20rpx;
+}
+.rating-wrapper .desc-wrapper{
+  display:flex;
+  justify-content:space-between;
+  font-size: 24rpx;
+  color: #000;
+}
+.desc-wrapper .rating-info{
+
+}
+.rating-info text{
+  color: red;
+  margin-left: 10rpx;
+}
+.desc-wrapper .rating-count{
+  color: rgb(160, 142, 142);
+}
+.rating-count text{
+  margin-left: 10rpx;
+}

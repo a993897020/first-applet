@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header":"/components/header/header",
+    "goods": "/components/goods/goods",
+    "rating":"/components/rating/rating",
+    "seller":"/components/seller/seller"
+  }
+}

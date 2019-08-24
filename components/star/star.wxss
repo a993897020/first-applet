@@ -1,0 +1,12 @@
+/* components/star/star.wxss */
+.star-wrapper{
+  display:flex;
+  flex-direction: row;
+  justify-content:flex-start;
+}
+.star-wrapper image{
+  width: 20rpx;
+  height:20rpx;
+  margin-top: 5rpx;
+  margin-right: 10rpx;
+}

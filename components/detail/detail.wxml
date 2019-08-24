@@ -1,0 +1,21 @@
+<view class="food-wrapper" >
+  <view class="image-wrapper">
+    <image src="{{foodItem.picture}}"></image>
+  </view>
+  <view class="info-wrapper">
+    <view class="info-name">{{foodItem.name}}</view>
+    <view class="info-total">{{foodItem.month_saled_content}}</view>
+    <view class="money-count">
+      <view class="money">￥{{foodItem.min_price}}/{{foodItem.unit}}</view>
+      <controlCount icon="{{10}}"></controlCount>
+    </view>
+  </view>
+  <view class="rating-wrapper">
+    <view class="desc-wrapper">
+       <view class="rating-info">{{foodItem.rating.title}}({{foodItem.rating.like_ratio_desc}}<text>{{foodItem.rating.like_ratio}}</text>)</view>
+    <view class="rating-count">{{foodItem.rating.snd_title}}<text>></text></view>
+    </view>
+    <ratingItem foods="{{foodItem.rating.comment_list}}"></ratingItem>
+  </view>
+  <shopping poi_info="{{poi_info}}"></shopping>
+</view>

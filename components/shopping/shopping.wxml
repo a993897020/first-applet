@@ -1,0 +1,10 @@
+<view class="shopping-wrapper">
+              <view class="icon-wrapper" bindtap="onShoppingList">
+              <image src="image/shopping.png" wx:if="{{buying}}"></image>
+              <image src="image/shopping-a.png" wx:else class="{{!buying?'buyActive':''}}"></image>
+              </view>
+              <view class="money">
+                <view class="needMoney">另需{{poi_info.shipping_fee_tip}}</view>
+              <view class="goMoney">{{poi_info.min_price_tip}}</view>
+              </view>
+          </view>

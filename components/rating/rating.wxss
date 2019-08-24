@@ -1,0 +1,90 @@
+/* components/rating/rating.wxss */
+.rating-wrapper{
+  width: 100%;
+}
+.rating-wrapper .score-wrapper{
+  display:flex;
+  justify-content:space-between;
+  padding: 20rpx;
+  border: 5px solid rgba(0, 0, 0, .1)
+}
+.score-wrapper .seller-wrapper{
+  margin-left: 20rpx;
+}
+.seller-wrapper .seller-score{
+  font-size: 50rpx;
+  color: #ffba09;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+  margin-left: 15rpx;
+}
+.seller-wrapper .seller-text{
+  font-size: 28rpx;
+  color: #606d70;
+}
+.score-wrapper .rate-wrapper{
+  margin-right: 80rpx;
+  margin-top: 20rpx;
+}
+.rate-wrapper .flavor-wrapper{
+  margin-bottom: 20rpx;
+  display:flex;
+}
+.flavor-wrapper .flavor-text{
+  font-size: 24rpx;
+  color:#606d70;
+  margin-right: 10rpx;
+}
+.rating-wrapper .box-wrapper{
+  margin-top: 10rpx;
+  display:flex;
+}
+.box-wrapper .box-text{
+  font-size: 24rpx;
+  color: #606d70;
+  margin-right: 10rpx;
+}
+.score-wrapper .express-wrapper{
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.express-wrapper .express-score{
+  font-size: 40rpx;
+  color: #606d70;
+  margin-bottom: 10rpx;
+  margin-left: 25rpx;
+}
+.express-wrapper .express-text{
+  font-size: 28rpx;
+  color: #606d70;
+  margin-top:10rpx;
+}
+.tab-wrapper{
+  padding: 30rpx 20rpx 10rpx 20rpx;
+  display:flex;
+  justify-content:center;
+}
+.tab-wrapper .tab-item{
+  flex: 1;
+  border: 1px solid #ffba09;
+  color: #ffba09;
+  text-align: center;
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+.tab-item image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.tab-wrapper .active{
+  background-color:#ffba09;
+  color:#000;
+}
+.ratings-wrapper{
+  padding: 10rpx 20rpx;
+  height: 650rpx;
+}
+ratings-scroll{
+  height: 500rpx;
+}

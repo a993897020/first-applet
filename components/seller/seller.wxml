@@ -1,0 +1,33 @@
+      <view class="seller-wrapper">
+        <view class="address-wrapper">
+          <image class="address-icon" src="image/address.png"></image>
+          <view class="address-text">{{seller.address}}</view>
+          <image src="image/phone.png" class="address-phone"></image>
+        </view>
+        <scroll-view scroll-x="{{true}}" class="image-wrapper">
+          <image wx:for="{{seller.poi_env.thumbnails_url_list}}" wx:key="index" src="{{item}}"></image>
+        </scroll-view>
+        <view class="check-wrapper">
+          <image class="check-icon" src="image/safety.png"></image>
+          <view class="check-text">查看食品安全档案</view>
+        </view>
+        <view class="serve-wrapper">
+          <view class="serve-text">配送服务{{seller.app_delivery_tip}}</view>
+        </view>
+        <view class="time-wrapper">
+          <image class="time-icon" src="image/time.png"></image>
+          <view class="time-text">
+            配送时间:{{seller.shipping_time}}
+          </view>
+        </view>
+        <view class="icon-text">
+          <image class="serve-icon" src="image/server.png"></image>
+          <text>商家服务</text>
+          <image class="service-icon" src="{{seller.poi_service[0].icon}}"></image>
+          <text>{{seller.poi_service[0].content}}</text>
+        </view>
+        <view class="first-wrapper">
+          <image class="first-icon" src="{{seller.discounts2[0].icon_url}}"></image>
+          <view class="first-text">{{seller.discounts2[0].info}}</view>
+        </view>
+      </view>

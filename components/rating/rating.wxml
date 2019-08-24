@@ -1,0 +1,40 @@
+<view class="rating-wrapper">
+  <view class="score-wrapper">
+    <view class="seller-wrapper">
+      <view class="seller-score">{{ratings.comment_score}}</view>
+      <view class="seller-text">商家评分</view>
+    </view>
+    <view class="rate-wrapper">
+      <view class="flavor-wrapper">
+        <text class="flavor-text">口味</text>
+        <star rate="{{ratings.quality_score}}"></star>
+      </view>
+      <view class="box-wrapper">
+        <text class="box-text">包装</text>
+        <star rate="{{ratings.pack_score}}"></star>
+      </view>
+      </view>
+      <view class="express-wrapper">
+        <view class="express-score">{{ratings.delivery_score}}</view>
+        <view class="express-text">配送评分</view>
+    </view>
+  </view>
+  <view class="tab-wrapper" >
+    <view class="tab-item {{indexActive==index?'active':''}}" wx:for="{{ratings.tab}}" wx:key="index" bindtap="onClickTab" data-id="{{index}}">
+    <image src="image/icon.png" wx:if="{{index==2&&!iconActive}}" ></image>    
+    <image src="image/icon-a.png" wx:if="{{index==2&&iconActive}}" ></image>    
+    {{item.comment_score_title}}
+    </view>
+  </view>
+  <swiper current="{{indexActive}}" bindchange="onChangeTab" class="ratings-wrapper">
+    <swiper-item class="ratings-all">
+      <ratingItem ratings="{{ratings}}"></ratingItem>
+    </swiper-item>
+    <swiper-item class="ratings-img">
+      <ratingItem ratings="{{ratings}}" num="{{5}}" icon="{{3}}"></ratingItem>
+    </swiper-item>
+    <swiper-item class="ratings-point">
+      <ratingItem ratings="{{ratings}}" num="{{8}}" icon="{{5}}"></ratingItem>
+    </swiper-item>
+    </swiper>
+</view>

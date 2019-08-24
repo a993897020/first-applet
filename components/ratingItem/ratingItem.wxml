@@ -1,0 +1,24 @@
+    <scroll-view scroll-y="{{true}}" class="ratings-scroll">
+      <view class="tag-icon" wx:for="{{ratings.labels}}" wx:key="index" wx-if="{{index>=icon}}">
+      {{item.content}}{{item.label_count}}
+      </view>
+        <view class="ratings-item" wx:for="{{ratings.comments}}" wx:key="index" wx:if="{{index>=num}}">
+
+        <view class="avatar">
+          <image src="{{item.user_pic_url}}" wx:if="{{item.user_pic_url}}"></image>
+          <image src="{{image/person.png}}" wx:else></image>
+        </view>
+       <view class="wrapper">
+         <view class="name-time">
+          <view class="name">{{item.user_name}}</view>
+          <view class="time">{{item.comment_time}}</view>
+        </view>
+        <view class="rate">
+            <text>评分</text><star rate="{{item.order_comment_score}}"></star>
+          </view>
+          <view class="info" >
+            {{item.comment}}
+          </view>
+       </view>
+      </view>
+      </scroll-view>

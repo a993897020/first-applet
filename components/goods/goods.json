@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "shopping":"/components/shopping/shopping",
+    "controlCount":"/components/controlCount/controlCount",
+    "detail":"/components/detail/detail"
+  }
+}

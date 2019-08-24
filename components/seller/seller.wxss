@@ -1,0 +1,96 @@
+.seller-wrapper{
+  padding: 20rpx;
+}
+.seller-wrapper .address-wrapper{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom: 20rpx;
+}
+.address-wrapper .address-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.address-wrapper .address-text{
+  margin-left: -150rpx;
+  font-size: 24rpx;
+}
+.address-wrapper .address-phone{
+  width: 30rpx;
+  height: 30rpx;
+}
+.seller-wrapper .image-wrapper{
+  width: 100%;
+  white-space:nowrap;
+  margin-bottom: 20rpx;
+}
+.image-wrapper image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  display:inline-block;
+  margin-right: 10rpx;
+}
+.seller-wrapper .check-wrapper{
+  display:flex;
+  flex-direction:row;
+  margin-bottom: 20rpx;
+}
+.check-wrapper .check-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.check-wrapper .check-text{
+  font-size:24rpx;
+  margin-left: 20rpx;
+}
+.seller-wrapper .serve-wrapper{
+  margin-bottom: 20rpx;
+}
+.serve-wrapper .serve-text{
+  font-size: 24rpx;
+}
+.seller-wrapper .time-wrapper{
+  display:flex;
+  flex-direction:row;
+  margin-bottom: 20rpx;
+}
+.time-wrapper .time-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.time-wrapper .time-text{
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+.seller-wrapper .icon-text{
+  display:flex;
+  justify-content:flex-start;
+  margin-bottom: 20rpx;
+}
+.icon-text .serve-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.icon-text text{
+  margin: 0 20rpx;
+  color: #000;
+  font-size: 24rpx;
+}
+.icon-text .service-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.seller-wrapper .first-wrapper{
+  display:flex;
+  justify-content:flex-start;
+}
+.first-wrapper .first-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.first-wrapper .first-text{
+  color: #000;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+}

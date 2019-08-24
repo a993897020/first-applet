@@ -1,0 +1,32 @@
+<view class="header-wrapper">
+    <view class="bg-wrapper">
+      <image src="{{poi_info.head_pic_url}}"></image>
+    </view>
+    <view class="top-wrapper">
+      <view class="back">
+        <image src="image/back.png"></image>
+      </view>
+      <view class="search">
+        <input type="text" placeholder="请输入搜索的内容"></input>
+      </view>
+      <view class="more-wrapper">
+          <text class="icon-p">拼单</text>
+          <text class="icon"></text>
+          <text class="icon"></text>
+          <text class="icon"></text>
+        </view>
+    </view>
+    <view class="content-wrapper">
+      <image src="{{poi_info.pic_url}}" class="img-m"></image>
+      <text class="name">{{poi_info.name}}</text>
+        <view class="star-wrapper">
+          <image src="image/star.png"></image>
+          <view class="text">收藏</view>
+        </view>      
+    </view>
+    <view class="footer-wrapper">
+      <image class="img-f" src="{{poi_info.discounts2[0].icon_url}}"></image>
+      <text class="info">{{poi_info.discounts2[0].info}}</text>
+      <text class="active">1个活动</text>
+    </view>
+  </view>
