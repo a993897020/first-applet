@@ -2,7 +2,6 @@
   "component": true,
   "usingComponents": {
     "controlCount":"/components/controlCount/controlCount",
-    "ratingItem":"/components/ratingItem/ratingItem",
     "shopping":"/components/shopping/shopping"
   }
 }

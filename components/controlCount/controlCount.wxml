@@ -1,5 +1,5 @@
 <view class="count-wrapper">
-    <text bindtap="onRemoveClick" wx:if="{{count>0}}"  class="remove">-</text>
-    <text class="count" wx:if="{{count>0}}">{{count}}</text>
-    <text bindtap="onAddClick" class="add">+</text>
+    <text catchtap="onRemoveClick" wx:if="{{count>0||foodCount!==0}}"  class="remove">-</text>
+    <text class="count" wx:if="{{count>0||foodCount!==0}}">{{count}}</text>
+    <text catchtap="onAddClick" class="add">+</text>
   </view>

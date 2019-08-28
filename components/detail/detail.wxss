@@ -57,3 +57,33 @@
 .rating-count text{
   margin-left: 10rpx;
 }
+.rating-item{
+  display:flex;
+  justify-content:flex-satrt;
+  margin-top: 20rpx;
+}
+.rating-item .avatar-wrapper{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.rating-item .content-wrapper{
+  flex:1;
+}
+.content-wrapper .name-time{
+  display:flex;
+  justify-content:space-between;
+}
+.name-time .name{
+  font-size: 24rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+.name-time .time{
+  font-size: 24rpx;
+  color: #ccc;
+}
+.content-wrapper .content{
+  font-size: 24rpx;
+}

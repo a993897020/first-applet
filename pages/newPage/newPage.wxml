@@ -1,2 +1,4 @@
               <!-- 商品详情页 -->
-    <detail itemInfo="{{foodItem}}" poi_info="{{poi_info}}" ></detail>
+    <detail itemInfo="{{foodItem}}" poi_info="{{poi_info}}" bindShoppingList="onShoppingList" id="detail" foodArr="{{foodArr}}" foodCountInfo="{{foodCountInfo}}}"></detail>
+   <!-- 遮盖 -->
+     <view class="shoppingBg" bindtap="onCloseShopping" wx:if="{{openShopping}}"></view>

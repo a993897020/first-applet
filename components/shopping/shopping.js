@@ -8,19 +8,20 @@ Component({
       type:Object,
       value:{}
     },
-    foodCountInfo:{
-      type:Object,
-      value:{},
+    foodArr:{
+      type:Array,
+      value:[],
       observer(newVal,oldVal,changePath){
         this.updateData();
-        }
-      },
-      foods: {
-        type: Object,
-        value: {},
-        observer(newVal, oldVal, changePath) {
-          this.updateData();
-        }
+      }
+    },
+    foods: {
+      type: Object,
+      value: {}
+    },
+    size:{
+      type:Number,
+      value:65
     }
   },
 
@@ -28,66 +29,100 @@ Component({
    * 组件的初始数据
    */
   data: {
-    buying:true
+    buying:true,
+    openShopping:false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    onShoppingList(event){
-      var buying=this.data.buying;
-      // console.log(this.data.buying)
+    onCloseShopping(val){
       this.setData({
-        buying:!buying        
+        openShopping:val
       })
-      console.log(this.properties)
     },
+    onShoppingList(event){
+      // console.log(this.properties)
+      var openShopping=this.data.openShopping;
+      if(openShopping==false){
+        this.setData({
+          openShopping:true
+        })
+        this.triggerEvent("shoppingList", {
+          openShopping: true
+        })
+      }else{
+        this.setData({
+          openShopping: false
+        })
+        this.triggerEvent("shoppingList", {
+          openShopping: false
+        })
+      }
+    },
+    onClearEvent(){
+      var foodArr = this.properties.foodArr;
+      var clearFoodList=[];
+      for(var i=0;i<foodArr.length;i++){
+        foodArr[i].count=0
+        clearFoodList.push(foodArr[i])
+        this.setData({
+          foodArr: clearFoodList
+        })
+      }
+      this.triggerEvent('clearCount', {
+        clearFoodList: clearFoodList
+      })
+    },
+    
 
  
 
     updateData(){
-    //   var foods = this.properties.foods;
-    //   var buying = this.data.buying;
-    //   var countList = [];
-    //   var foodList = []
-    //   foods.forEach((item) => {
-    //     var itemFood = item.spus;
-    //     itemFood.forEach((food) => {
-    //       var count = food.count;
-    //       foodList.push(food)
-    //       countList.push(count)
-    //       if (count > 0) {
-    //         this.setData({
-    //           buying: !buying,
-    //           countList: countList,
-    //           foodList: foodList
-    //         })
-    //       } else {
-    //         this.setData({
-    //           buying: buying
-    //         })
-    //       }
-    //     })
-    //   })
+      var foodArr=this.properties.foodArr;
+      var count=0;
+      var money=0;
+      var food={}
+     if(foodArr.length>0){
+       foodArr.forEach(item => {
+         if (item.count > 0 ) {
+           count+=item.count
+           money+=item.count*item.min_price;
+           this.setData({
+             buying: false,
+             count:count,
+             money:money,
+             food:item
+           })
+           this.triggerEvent("update",{
+             item: item
+           })
+          //  console.log(foodArr)
+         } else {
+           this.setData({
+             buying: true,
+             count:0,
+             money:0,
+             food:item
+           })
+         }
+       })
+     }else{
+         this.setData({
+           buying: true,
+           count: 0,
+           money: 0,
+           foodArr:foodArr
+         })
+        //  console.log(foodArr)
+     }
+    
+      // console.log(this.properties)
     }
 
 
-    //     var foodCountInfo = this.properties.foodCountInfo;
-    //   var countList=[];
-    //   var count=0;
-    //   countList.push(foodCountInfo)
-    //   this.setData({
-    //     countList: countList
-    //   })
-    //   for (var i = 0; i < countList.length;i++){
-    //     count+=countList[i].count;
-    //     this.setData({
-    //       count: count,
-    //     })
-    //   }
-    //   console.log(this.data)
-    // }
+   
   },
     lifetimes: {
       accached() {

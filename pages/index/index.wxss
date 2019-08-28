@@ -1,4 +1,11 @@
-
+.container{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
 .nav-wrapper{
   display: flex;
 }
@@ -24,10 +31,20 @@
   background-color: #febf19;
 }
 .content-wrapper{
-  width: 100%;
-  height: 802rpx;
+  /* width: 100%;
+  height: 100%;
+  position:fixed; */
+  flex:1;
 }
 .content-wrapper .item-wrapper{
+  display:block;
+  overflow: hidden;
+}
+.shoppingBg{
   width: 100%;
-
+  height: 50%;
+  background-color: rgba(0,0,0,.5);
+  position:fixed;
+  left: 0;
+  top: 0;
 }

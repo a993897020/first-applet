@@ -4,34 +4,153 @@
   left: 0;
   width: 100%;
   height: 80rpx;
-  background-color: #4c4c4c;
+  background-color: #000;
 }
-.shopping-wrapper image{
+
+.shopping-wrapper .icon-wrapper{
+  position:relative;
+  width: 100rpx;
+  height: 100rpx;
+  left: 20rpx;
+  bottom: 38rpx;
+}
+.icon-wrapper image{
   width: 50rpx;
   height: 50rpx;
   background-color: #2e2c2c;
   border-radius: 50%;
   padding: 25rpx;
-  margin-left: 20rpx;
-  margin-top: -30rpx;
+}
+.icon-wrapper .totalCount{
+  width:35rpx;
+  height: 35rpx;
+  display:inline-block;
+  text-align: center;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  position:absolute;
+  right: 0;
+  top: 0;
 }
 .shopping-wrapper .money{
   display:flex;
   justify-content:space-between;
 }
-.money .needMoney{
-  margin-top: -50rpx;
+.money .left-money{
+
+  margin-top: -100rpx;
   margin-left: 130rpx;
+}
+.left-money .totalMoney{
+  color: #fff;
+  font-size: 32rpx;
+  margin-left: 10rpx;
+}
+.left-money .needMoney{
   font-size: 24rpx;
   color: #ccc;
 }
-.money .goMoney{
+.money .right-money{
+  height: 80rpx;
+  margin-top: -100rpx;
+}
+.right-money .goMoney{
   font-size: 32rpx;
-  margin-top: -55rpx;
-  margin-right: 20rpx;
   font-weight: bold;
   color: #999;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-right: 30rpx;
+}
+.right-money .goBuy{
+  font-size: 32rpx;
+  height: 80rpx;
+  width: 180rpx;
+  background-color: #ffd65d;
+  line-height: 80rpx;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  display:inline-block;
 }
 .shopping-wrapper .buyActive{
   background-color: #ffd65d;
+}
+
+.list-wrapper{
+  position:fixed;
+  left: 0;
+  bottom: 80rpx;
+  width: 100%;
+  height: 65%;
+  z-index: -1;
+  background-color: #fff;
+}
+.list-wrapper .header-wrapper{
+  width: 100%;
+  text-align: center;
+  background-color: #ffd65d;
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+.list-wrapper .title-wrapper{
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+  background-color: #ccc;
+}
+.title-wrapper .title{
+  font-size: 24rpx;
+  padding:10rpx;
+  border-left: 5px solid green;
+}
+.title-wrapper .clear{
+  display:flex;
+  justify-content:flex-start;
+  padding: 10rpx;
+}
+.clear image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.clear .info{
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.list-wrapper .foodList-wrapper{
+  width: 100%;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  height: 400rpx;
+}
+.foodList-wrapper .foodItem-wrapper{
+  width: 100%;
+  display:flex;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding: 10rpx 0;
+}
+.foodItem-wrapper .name-unit{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.name-unit .name{
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #000;
+}
+.name-unit .unit{
+  color: red;
+  font-size: 24rpx;
+}
+.foodItem-wrapper .money{
+  margin-left: 100rpx;
+  font-size: 24rpx;
+}
+.foodItem-wrapper .count{
+  margin-left: 200rpx;
 }

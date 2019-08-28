@@ -7,7 +7,7 @@
     <view class="info-total">{{foodItem.month_saled_content}}</view>
     <view class="money-count">
       <view class="money">￥{{foodItem.min_price}}/{{foodItem.unit}}</view>
-      <controlCount icon="{{10}}"></controlCount>
+      <controlCount info="{{itemInfo}}"></controlCount>
     </view>
   </view>
   <view class="rating-wrapper">
@@ -15,7 +15,18 @@
        <view class="rating-info">{{foodItem.rating.title}}({{foodItem.rating.like_ratio_desc}}<text>{{foodItem.rating.like_ratio}}</text>)</view>
     <view class="rating-count">{{foodItem.rating.snd_title}}<text>></text></view>
     </view>
-    <ratingItem foods="{{foodItem.rating.comment_list}}"></ratingItem>
+    <view wx:for="{{foodItem.rating.comment_list}}" class="rating-item" wx:key="index">
+        <image class="avatar-wrapper" wx:if="{{item.user_icon}}" src="{{item.user_icon}}"></image>
+        <image class="avatar-wrapper" wx:if="{{!item.user_icon}}" src="image/person.png"></image>
+        <view class="content-wrapper">
+          <view class="name-time">
+            <view class="name">{{item.user_name}}</view>
+          <view class="time">{{item.comment_time}}</view>
+          </view>
+          <view class="content">{{item.comment_content}}</view>
+        </view>
+    </view>
   </view>
-  <shopping poi_info="{{poi_info}}"></shopping>
+  <shopping poi_info="{{poi_info}}" bindshoppingList="onShoppingList"  bindclearCount="onClearCount" size="44" id="shopping" foodArr="{{foodArr}}"></shopping>
 </view>
+ 

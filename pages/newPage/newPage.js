@@ -1,4 +1,3 @@
-var goodsInfo = require("../../data/goods.js");
 // pages/newPage/newPage.js
 Page({
 
@@ -14,30 +13,54 @@ Page({
    */
   onLoad: function (options) {
    
-   this.setData({
-     goods: goodsInfo.getGoods.data,
-     poi_info: goodsInfo.getGoods.data.poi_info,
-   })
     var topPage = getCurrentPages()[0];
     var foodItem=topPage.data.foodItem;
+    var poi_info=topPage.data.poi_info;
+    var foodArr=topPage.data.foodArr;
+    var foodCountInfo = topPage.data.foodCountInfo
     this.setData({
-      foodItem:foodItem
+      foodItem:foodItem,
+      poi_info: poi_info,
+      foodArr: foodArr,
+      foodCountInfo: foodCountInfo
     })
-    console.log(foodItem)
+    // console.log(topPage)
+    wx.setNavigationBarTitle({
+      title: foodItem.name,
+    })
   },
-
+  onShoppingList(event) {
+    console.log(event)
+    var openShopping = event.detail.openShopping;
+    this.setData({
+      openShopping: openShopping
+    })
+  },
+  onCloseShopping(event) {
+    this.setData({
+      openShopping: false
+    })
+    var detail = this.selectComponent("#detail");
+    detail.onCloseShopping(false)
+  },
+  onTap(event) {
+    this.setData({
+      'indexTap': event.target.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     wx.hideLoading();
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

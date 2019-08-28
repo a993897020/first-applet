@@ -33,18 +33,15 @@
                   {{info.min_price}}/{{info.unit}}
                 </view>
                 <!-- count加减 -->
-                <controlCount  bindcountInfo="onCountInfo" count="{{count}}" info="{{info}}" class="count" foods="{{foods}}"></controlCount>
+                <controlCount  bindcountInfo="onCountInfo" info="{{info}}" class="count" foods="{{foods}}" bindclearCount="onClearCount"></controlCount>
               </view>
             </view>
           </view>
         </scroll-view>
     </view>
-     <view wx:for='{{foods}}' wx:key="index" wx:for-item="food">
-      <view wx:for="{{food.spus}}" wx:key="index" >
-                           <!-- 购物车  -->
-       <shopping poi_info="{{poi_info}}" foodCountInfo="{{foodCountInfo}}" foods="{{foods}}"></shopping>
-      </view>
-     </view>
+                                <!-- 购物车  -->
+       <shopping bindclearCount="onClearCount"  bindshoppingList="onShoppingList" poi_info="{{poi_info}}" foodArr="{{foodArr}}" id="shopping" foodCount="{{foodArr.length}}" foods="{{foods}}" bindupdate="onUpdataInfo"></shopping>
+      
    
         
         

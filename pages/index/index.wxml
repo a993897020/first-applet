@@ -1,10 +1,11 @@
 <!--index.wxml-->
-  <header poi_info="{{poi_info}}"></header>
+ <view class="container">
+   <header poi_info="{{poi_info}}"></header>
   <view class="nav-wrapper">
       <view 
-  class="item {{indexTap===index?'active':''}}" wx:for="{{nav}}" wx:key="{{index}}" data-index="{{index}}"
-      bindtap="onTap">
-        {{item}}
+  class="item {{indexTap===index?'active':''}}" wx:for="{{nav}}" wx:key="{{index}}" data-index="{{index}}" 
+      catchtap="onTap">
+        {{item}}<text wx:if="{{index==1}}">({{ratings.comment_num}})</text>
         <view class="{{indexTap===index?';line':''}}" ></view>
       </view>
     </view>
@@ -14,15 +15,18 @@
       class="content-wrapper"
       current="{{indexTap}}">
     <swiper-item class="item-wrapper">
-     <goods showItem="{{showItem}}" foods="{{foods}}" poi_info="{{poi_info}}" bindgetItem="getFoodItem"></goods>
-       
+    <!-- 点菜页面 -->
+     <goods bindShoppingList="onShoppingList" showItem="{{showItem}}" foods="{{foods}}" poi_info="{{poi_info}}" bindgetItem="getFoodItem" scrollHeight="{{scroll_height}}" id="goods" bindshoppingCarList="onCarList"></goods>
     </swiper-item>
     <swiper-item class="item-wrapper">
+    <!-- 评价页面 -->
       <rating ratings="{{ratings}}"></rating>
     </swiper-item>
     <swiper-item class="item-wrapper">
+    <!-- 商家页面 -->
     <seller seller="{{seller}}"></seller>
     </swiper-item>
   </swiper>
-   
+   <view class="shoppingBg" bindtap="onCloseShopping" wx:if="{{openShopping}}"></view>
   
+ </view>

@@ -12,7 +12,9 @@ Page({
   },
   
   onLoad: function (options) {
-
+      wx.showLoading({
+        title: '正在加载...',
+      })
     this.setData({
     goods:goodsInfo.getGoods.data,              poi_info:goodsInfo.getGoods.data.poi_info,
   foods:goodsInfo.getGoods.data.food_spu_tags,
@@ -23,19 +25,46 @@ Page({
     // console.log(this.data.seller);
     // console.log(this.data.goods);
     // console.log(options);
+   
+  },
+  onReady(){
+    wx.hideLoading();
   },
   getFoodItem(event) {
     var foodItem = event.detail;
     this.setData({
       foodItem: foodItem
     })
-    console.log(event)
+    // console.log(event)
+  },
+  onShoppingList(event){
+    // console.log(event)
+    var openShopping = event.detail.openShopping;
+    this.setData({
+      openShopping:openShopping
+    })
+  },
+  onCarList(event){
+    // console.log(event)
+    var foodArr=event.detail.foodArr;
+    var foodCountInfo = event.detail.foodCountInfo
+    this.setData({
+      foodArr:foodArr,
+      foodCountInfo: foodCountInfo
+    })
+  },
+  onCloseShopping(event){
+    this.setData({
+      openShopping:false
+    })
+    var goods=this.selectComponent("#goods");
+    goods.onCloseShopping(false)
   },
   onTap(event) {
     this.setData({
       'indexTap': event.target.dataset.index
     })
-    console.log(event);
+    // console.log(event);
 
   },
 
